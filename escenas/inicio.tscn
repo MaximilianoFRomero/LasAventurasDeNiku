@@ -1,0 +1,110 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Rocky Roads/Deco/black.png" type="Texture" id=1]
+[ext_resource path="res://Rocky Roads/UI/logo.png" type="Texture" id=2]
+[ext_resource path="res://Rocky Roads/Enemies/bear_brown.png" type="Texture" id=3]
+[ext_resource path="res://scripts/cargamenu2.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "cam"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 4, 5, 6 ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://Fonts/AbstractGroovy-K7Zdy.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+use_mipmaps = true
+font_data = SubResource( 4 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Black" type="Sprite" parent="."]
+position = Vector2( 717, 379 )
+scale = Vector2( 6.36914, 33.3125 )
+texture = ExtResource( 1 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 1198, 628 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+hframes = 4
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+autoplay = "cam"
+anims/RESET = SubResource( 1 )
+anims/cam = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 1141.0
+margin_top = 582.0
+margin_right = 1268.0
+margin_bottom = 611.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Cargando"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+margin_left = -10.0
+margin_top = 110.0
+margin_right = 923.0
+margin_bottom = 478.0
+rect_scale = Vector2( 1.4, 1.4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+text = "2022-2023 ©Highsoft. Los logos y marcas Highsoft Play y Highsoft Games son marcas comerciales registradas bajo licencia de Highsoft-AR. 
+El uso de este software esta sujeto bajo licencia disponible en el manual del juego en www.highsoft-ar.com.ar
+Para asistencia de clientes y soporte del juego visita www.highsoft-ar.com.ar
+Todos los derechos reservados.
+
+El contenido de este videojuego es de caracter ficticio y no pretende representar ningun evento, persona o entidad reales,
+y cualquier similitud es pura coincidencia.
+Los creadores de este juego recomiendan el uso medido de este software,
+Highsoft no se hace responsable por efectos secundarios en personas que no respetan el uso medido de este software.
+Quedan totalmente prohibidos el alquiler, la copia no autorizada, la ingenieria inversa, la transmision y emision en publico no autorizada,
+el pago por jugar y la anulacion de la proteccion anticopia."
+align = 1
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 81, 631 )
+scale = Vector2( 0.159424, 0.148682 )
+texture = ExtResource( 2 )

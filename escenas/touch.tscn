@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Rocky Roads/UI/pButton.png" type="Texture" id=7]
+[ext_resource path="res://Rocky Roads/UI/pButtonp.png" type="Texture" id=8]
+
+[node name="BotonesTactiles" type="Node2D"]
+
+[node name="pau" type="TouchScreenButton" parent="."]
+position = Vector2( 18, 17 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 8 )
+action = "ui_cancel"

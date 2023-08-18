@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/ui.gd" type="Script" id=1]
+[ext_resource path="res://escenas/coin2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fonts/AbstractGroovy-K7Zdy.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://sound/coin5.wav" type="AudioStream" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.294118, 0.815686, 0.419608, 0.294118 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="hud" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 1127.0
+margin_top = 24.0
+margin_right = 1224.0
+margin_bottom = 63.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 1126.0
+margin_top = 21.0
+margin_right = 1176.0
+margin_bottom = 60.0
+rect_scale = Vector2( 3, 3 )
+
+[node name="monedasCol" type="Label" parent="."]
+margin_left = 1178.0
+margin_top = 30.0
+margin_right = 1218.0
+margin_bottom = 55.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Area2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1147, 42 )
+scale = Vector2( 2, 2 )

@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/salirb.png-ab8306c570dff7b5fb47272f90773df5.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Rocky Roads/UI/salirb.png"
+dest_files=[ "res://.import/salirb.png-ab8306c570dff7b5fb47272f90773df5.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
