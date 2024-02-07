@@ -75,15 +75,12 @@ tracks/0/keys = {
 size = 44
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFontData" id=5]
+[sub_resource type="DynamicFontData" id=9]
 font_path = "res://Fonts/AbstractGroovy-K7Zdy.ttf"
 
-[sub_resource type="DynamicFont" id=6]
-size = 26
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-use_mipmaps = true
-font_data = SubResource( 5 )
+[sub_resource type="DynamicFont" id=10]
+size = 76
+font_data = SubResource( 9 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
@@ -141,25 +138,9 @@ juego completo proximamente"
 align = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
-margin_left = 379.0
-margin_top = 219.0
-margin_right = 805.0
-margin_bottom = 696.0
-custom_fonts/font = SubResource( 6 )
-text = "Creditos:
-Idea y desarrollo: 
-Maximiliano Romero
-Guion: 
-Melina alonso
-produccion ejecutiva: 
-Highsoft games
-produccion tecnica: 
-Highsoft-ar
-control de calidad: 
-Juliana Pucci
-pablo tegano
-Karen celes
-nahuel ceballos
-juan bravo
-lucas samudio"
-align = 1
+margin_left = 360.0
+margin_top = 392.0
+margin_right = 845.0
+margin_bottom = 556.0
+custom_fonts/font = SubResource( 10 )
+text = "game over"

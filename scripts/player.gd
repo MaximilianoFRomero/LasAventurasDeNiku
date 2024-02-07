@@ -11,8 +11,8 @@ const Gravedad = 15
 
 onready var sprite = $Sprite
 onready var animationPlayer = $AnimationPlayer
-var coins
-var lifes=3
+var coins = 0
+var energy = 3
 
 var motion = Vector2()
 
@@ -49,19 +49,32 @@ func _physics_process(delta):
 func addCoin():
 	var canvasLayer = get_tree().get_root().find_node("hud", true, false)
 	canvasLayer.handleCoinCollected()
+	coins +=1
+	print(str(coins))
 
-func loseLife():
-	if lifes > 0:
-		print("vida menos")
-		lifes = lifes-1
+func addLife():
+	var canvasLayer = get_tree().get_root().find_node("hud", true, false)
+	energy+=1
+	canvasLayer.handleLifeCollected(energy)
+	print("Life added, lifes:"+str(energy))
+
+func loseLife(var enemyposx):
+	if position.x < enemyposx:
+		motion.x = -300
+		motion.y = -150
+	if position.x > enemyposx:
+		motion.x = 300
+		motion.y = -150
+	if position.x == enemyposx:
+		motion.y = -150
+	energy-=1
+	print("health: "+str(energy))
+	#print("lifes:"+str(lifes))
+	var canvasLayer = get_tree().get_root().find_node("hud", true, false);
+	canvasLayer.handledHearts(energy)
+	if energy <= 0:
+		#lifes = lifes-1
 		get_tree().reload_current_scene()
-		
-	else:
-		get_tree().change_scene("res://escenas/menu.tscn")
-		lifes = 3
-	
-
-
 func _on_zoom_body_entered(body):
 	if body.get_name()=="player":
 		$Camera2D.zoom = Vector2(0.35,0.35)

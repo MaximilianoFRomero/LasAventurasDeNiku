@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Rocky Roads/Enemies/fire_big.png" type="Texture" id=1]
+[ext_resource path="res://scripts/fuego.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -38,6 +39,7 @@ tracks/0/keys = {
 extents = Vector2( 6, 3 )
 
 [node name="fuego" type="KinematicBody2D"]
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

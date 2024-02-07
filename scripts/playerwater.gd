@@ -12,6 +12,7 @@ const Gravedad = 3
 onready var sprite = $Sprite
 onready var animationPlayer = $AnimationPlayer
 var coins
+var energy
 
 var motion = Vector2()
 
@@ -52,7 +53,21 @@ func addCoin():
 	var canvasLayer = get_tree().get_root().find_node("hud", true, false)
 	canvasLayer.handleCoinCollected()
 
-func loseLife():
-	print("vida menos")
-	get_tree().reload_current_scene()
+func loseLife(var enemyposx):
+	if position.x < enemyposx:
+		motion.x = -300
+		motion.y = -150
+	if position.x > enemyposx:
+		motion.x = 300
+		motion.y = -150
+	if position.x == enemyposx:
+		motion.y = -150
+	energy = energy-1
+	print("health: "+str(energy))
+	#print("lifes:"+str(lifes))
+	var canvasLayer = get_tree().get_root().find_node("hud", true, false);
+	canvasLayer.handledHearts(energy)
+	if energy <= 0:
+		#lifes = lifes-1
+		get_tree().reload_current_scene()
 	

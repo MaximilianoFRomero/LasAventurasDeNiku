@@ -16,7 +16,7 @@
 [ext_resource path="res://Rocky Roads/Objects/sign_arrow.png" type="Texture" id=14]
 [ext_resource path="res://escenas/hud.tscn" type="PackedScene" id=15]
 [ext_resource path="res://escenas/botones2.tscn" type="PackedScene" id=16]
-[ext_resource path="res://escenas/crab.tscn" type="PackedScene" id=17]
+[ext_resource path="res://escenas/hearts.tscn" type="PackedScene" id=17]
 [ext_resource path="res://escenas/crab1.tscn" type="PackedScene" id=18]
 [ext_resource path="res://escenas/Pausa.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Rocky Roads/UI/meta.png" type="Texture" id=20]
@@ -1066,6 +1066,12 @@ script = ExtResource( 11 )
 position = Vector2( 4229.5, -13 )
 shape = SubResource( 19 )
 
+[node name="coin2d" parent="Colisiones/Area2D2" instance=ExtResource( 17 )]
+position = Vector2( -185.5, 14.5 )
+
+[node name="coin2d2" parent="Colisiones/Area2D2" instance=ExtResource( 17 )]
+position = Vector2( -164.5, 15.5 )
+
 [node name="zoom" type="Area2D" parent="Colisiones"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colisiones/zoom"]
@@ -1117,6 +1123,9 @@ smoothing_enabled = true
 [node name="KinematicBody2D" parent="Enemigos" instance=ExtResource( 18 )]
 position = Vector2( -3492, -1148 )
 
+[node name="KinematicBody2D9" parent="Enemigos" instance=ExtResource( 18 )]
+position = Vector2( -4019, -1196 )
+
 [node name="KinematicBody2D2" parent="Enemigos" instance=ExtResource( 18 )]
 position = Vector2( -3318, -1148 )
 
@@ -1137,10 +1146,6 @@ position = Vector2( -1409, -1436 )
 
 [node name="KinematicBody2D8" parent="Enemigos" instance=ExtResource( 18 )]
 position = Vector2( 399, 310 )
-scale = Vector2( 0.8, 0.8 )
-
-[node name="crab" parent="Enemigos" instance=ExtResource( 17 )]
-position = Vector2( -4035, -1194 )
 scale = Vector2( 0.8, 0.8 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

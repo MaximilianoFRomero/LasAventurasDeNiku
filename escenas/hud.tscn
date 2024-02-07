@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/ui.gd" type="Script" id=1]
-[ext_resource path="res://escenas/coin2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://escenas/coin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Fonts/AbstractGroovy-K7Zdy.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://sound/coin5.wav" type="AudioStream" id=4]
+[ext_resource path="res://escenas/hearts.tscn" type="PackedScene" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.294118, 0.815686, 0.419608, 0.294118 )
@@ -51,6 +52,26 @@ custom_fonts/font = SubResource( 2 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 
-[node name="Area2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1147, 42 )
+[node name="coin2d2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1144, 90 )
+scale = Vector2( 2, 2 )
+
+[node name="coin2d3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1175, 90 )
+scale = Vector2( 2, 2 )
+
+[node name="coin2d4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1206, 90 )
+scale = Vector2( 2, 2 )
+
+[node name="coin2d5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1113, 90 )
+scale = Vector2( 2, 2 )
+
+[node name="coin2d6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1082, 90 )
+scale = Vector2( 2, 2 )
+
+[node name="coin2d" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1146, 43 )
 scale = Vector2( 2, 2 )
